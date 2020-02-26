@@ -4,13 +4,34 @@
 # Your name is (blank), you are (blank) years old and 
 # your username is (blank)
 
-puts "What is your name? "
-name = gets.chomp
+class UserDetails
+  attr_reader :name
+  attr_reader :age
+  attr_reader :username
 
-puts "What is your age? "
-age = gets.chomp
+  def getName
+    puts "What is your name? "
+    @name = gets.chomp
+  end
 
-puts "What is your Reddit username? "
-username = gets.chomp
+  def getAge
+    puts "What is your age? "
+    @age = gets.chomp
+  end
 
-puts "Your name is #{name}, you are #{age} years old and your Reddit username is #{username}."
+  def getUsername
+    puts "What is your Reddit username? "
+    @username = gets.chomp
+  end
+  
+  def printDetails
+    puts "Your name is #{@name}, you are #{@age} years old and your Reddit username is #{@username}."
+  end
+end
+
+userDetails = UserDetails.new
+
+userDetails.getName
+userDetails.getAge
+userDetails.getUsername
+userDetails.printDetails
